@@ -91,3 +91,15 @@ checkBox.addEventListener("change", (e) => {
     localStorage.setItem("taskObj", JSON.stringify(taskObj))
   }
 })
+
+//scrollSync
+const div1 = document.querySelector('.taskList');
+const div2 = document.querySelector('.checkBox');
+
+function syncScroll(source, target) {
+  target.scrollTop = source.scrollTop;
+  target.scrollLeft = source.scrollLeft;
+}
+
+div1.addEventListener('scroll', () => syncScroll(div1, div2));
+div2.addEventListener('scroll', () => syncScroll(div2, div1));
