@@ -1,26 +1,93 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;    
+    box-sizing: border-box;
+    color: whitesmoke;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.items{
+.main{
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    grid-template-rows: 1fr 6fr 3fr;
+    height: 100vh;
+    width: 100vw;
+    padding: 2rem;
+    /* grid-gap: 1rem; */
+
+    grid-template-areas: "addTasks dayList"
+                        "taskList checkBox"
+                        "graphHeading ProgressChart";
+
+}
+.addTasks{
+    grid-area: addTasks;
+    background-color: antiquewhite;
+    border-radius: 1rem;
+}
+
+.dayList{
+    grid-area: dayList;
+    background-color: aquamarine;
+    border-radius: 1rem;
+}
+
+.taskList{
+    grid-area: taskList;
+    background-color: rgb(39, 38, 38);
+    border-radius: 1rem;
+}
+.checkBox{
+    grid-area: checkBox;
+    background-color: beige;
+    border-radius: 1rem;
+}
+.graphHeading{
+    grid-area: graphHeading;
+    background-color: bisque;
+    border-radius: 1rem;
+}
+.ProgressChart{
+    grid-area: ProgressChart;
+    background-color: black;
+    border-radius: 1rem;
+}
+
+
+/* addTasks */
+.inputBox .inputForm{
     display: flex;
-    flex-direction: column;
-    width: 300px;
-    height: 100%;
-    padding: 2%;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+    padding-top: 20px;
 }
-.add{
-    background-color:cornflowerblue;
+
+.input{
+    flex-grow: 1;
+    padding: 15px;
     border-radius: 10px;
-    flex: 2;
-}
-.list{
-    background-color: aqua;
-    border-radius: 10px;
-    flex: 8;
+    border: none;
+    background-color: rgb(0, 0, 0);
 }
 .btn{
-    border-radius: 5px;
-    background-color: rgb(14, 139, 0);
+    flex-grow: auto;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: black;
+}
+
+
+/* taskList */
+.tasks{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 1rem;
+
+}
+.listItems{
+    font-size: large;
 }
